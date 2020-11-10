@@ -1,9 +1,39 @@
 @import "~@angular/material/prebuilt-themes/green.css";
+@import "variables";
+@import "../node_modules/font-awesome/scss/font-awesome";
 
 // some basic resets
+$primary-color: #01602d;
+$primary-lighter-color: #b3cfc0;
+$primary-darker-color: #01441c;
+$accent-color: #3dae2b;
+$accent-lighter-color: #c5e7bf;
+$accent-darker-color: #27941a;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+  margin: 0px auto;
+  padding: $pad-up-down $pad-left-right;
+}
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  margin: 20px;
+  display: flex;
+}
+
+.background-primary {
+  background-color: $primary-color!important;
+}
+
+.background-secondary {
+  background-color: $accent-darker-color!important;
+}
+
+.flex-spacer {
+  flex: 1 1 auto;
 }

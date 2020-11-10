@@ -1,0 +1,20 @@
+<div class="container jumbotron" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
+  fxLayoutAlign.xs="start center" fxLayoutAlign.sm="start center" fxLayoutAlign.gt-sm="center center">
+
+  <div fxFlex fxFlex.gt-sm="10%">
+    <img src="/assets/img/udea.png" alt="Logo" width="150px">
+  </div>
+  <div fxFlex fxFlex.gt-sm="30%">
+    <h1>UNIVERSIDAD DE ANTIOQUIA</h1>
+    <p>Sistema de reservas de turnos para equipos de cómputo</p>
+  </div>
+</div>
+
+<mat-toolbar color="primary">
+  <a mat-button><span class="fa fa-home fa-lg"></span> Sedes</a>
+  <a mat-button><span class="fa fa-info fa-lg"></span> About</a>
+  <a mat-button><span class="fa fa-list fa-lg"></span> Menu</a>
+  <a mat-button><span class="fa fa-address-card fa-lg"></span> Contact</a>
+  <span class="flex-spacer"></span>
+  <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Login</a>
+</mat-toolbar>

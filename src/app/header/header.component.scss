@@ -1,0 +1,18 @@
+$primary-color: #01602d;
+$primary-lighter-color: #b3cfc0;
+$primary-darker-color: #01441c;
+$accent-color: #3dae2b;
+$accent-lighter-color: #c5e7bf;
+$accent-darker-color: #27941a;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+    @include zero-margin(0px,0px);
+    background: $primary-color;
+    color:floralwhite;
+    min-height: 100px;
+}
