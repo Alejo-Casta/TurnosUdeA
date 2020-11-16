@@ -9,16 +9,17 @@ import { catchError, retry } from 'rxjs/operators';
 export class LoginService {
 
   public API = 'https://lis.udea.edu.co/api/test/validarusuariooidxcn';
+  // public API2 = 'http://localhost/api/list';
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
-  login(car: any): Observable<any> {
-    let result: Observable<Object>;
-    result = this.http.post(this.API, car);
-    return result;
+  login(usuario: any): Observable<any> {
+    return this.http.post(this.API, usuario)
+      .pipe(catchError(error => error));
   }
 
-
+  setCookies(data: any){
+  }
 }
