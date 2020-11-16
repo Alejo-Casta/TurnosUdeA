@@ -1,3 +1,44 @@
-<p>
-  sedes works!
-</p>
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+
+  <div fxFlex>
+    <h3>Sedes</h3>
+    <hr>
+  </div>
+
+  <div fxFlex *ngIf="sedes">
+    <mat-grid-list cols="3" >
+      <mat-grid-tile *ngFor="let sede of sedes" [routerLink]="['/sala', sede.id]">
+        <mat-card class="sede-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{sede.nombre}}</mat-card-title>
+            <mat-card-subtitle>{{sede.estado}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div [hidden]="sedes || errMess">
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+
+</div>

@@ -9,7 +9,6 @@ import { catchError, retry } from 'rxjs/operators';
 export class LoginService {
 
   public API = 'https://lis.udea.edu.co/api/test/validarusuariooidxcn';
-  // public API2 = 'http://localhost/api/list';
 
   constructor(
     private http: HttpClient,
@@ -20,6 +19,4 @@ export class LoginService {
       .pipe(catchError(error => error));
   }
 
-  setCookies(data: any){
-  }
 }

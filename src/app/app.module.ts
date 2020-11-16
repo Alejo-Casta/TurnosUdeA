@@ -17,13 +17,17 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
-
-import 'hammerjs';
-import { SedesComponent } from './sedes/sedes.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SedesComponent } from './sedes/sedes.component';
+
+import { SedeService } from './services/sede.service';
+import { LoginService } from './services/login.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { baseURL } from './shared/baseurl';
+
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,11 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
   entryComponents: [
     LoginComponent
   ],
-  providers: [],
+  providers: [
+    SedeService,
+    LoginService,
+    { provide: 'BaseURL', useValue: baseURL }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

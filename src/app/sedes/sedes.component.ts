@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Sede } from '../shared/sede';
+import { SedeService } from '../services/sede.service';
+
+
 
 @Component({
   selector: 'app-sedes',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SedesComponent implements OnInit {
 
-  constructor() { }
+  sedes: Sede[];
+  errMess: string;
+
+  constructor(private sedeService: SedeService) { }
 
   ngOnInit() {
+    this.sedeService.getSedes().subscribe(sedes => this.sedes = sedes, errmes => this.errMess = <any>errmes);
   }
 
 }
