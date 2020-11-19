@@ -1,18 +1,35 @@
-$primary-color: #01602d;
-$primary-lighter-color: #b3cfc0;
-$primary-darker-color: #01441c;
-$accent-color: #3dae2b;
-$accent-lighter-color: #c5e7bf;
-$accent-darker-color: #27941a;
-
 @mixin zero-margin($pad-up-down, $pad-left-right) {
     margin: 0px auto;
     padding: $pad-up-down $pad-left-right;
 }
 
-.jumbotron {
-    @include zero-margin(0px,0px);
-    background: $primary-color;
-    color:floralwhite;
-    min-height: 100px;
+.header-container {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+}
+
+h1.example-app-name {
+    margin-left: 8px;
+}
+
+.example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
 }

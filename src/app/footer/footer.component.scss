@@ -1,6 +1,18 @@
+$primary-color: #01602d;
+
 @mixin zero-margin($pad-up-down, $pad-left-right) {
     margin: 0px auto;
     padding: $pad-up-down $pad-left-right;
+}
+
+.footer{
+    background-color: $primary-color;
+    @include zero-margin(10px, 0px);
+    color: whitesmoke !important;
+}
+
+.a-email{
+    color: whitesmoke !important;
 }
 
 .btn-facebook {
